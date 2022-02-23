@@ -1,3 +1,4 @@
+import Download from "../pages/Download/Download";
 import Landing from "../pages/Landing/Landing";
 
 export interface IRoute {
@@ -10,6 +11,10 @@ const routes: IRoute[] = [
     path: "/",
     component: Landing,
   },
+  {
+    path: "/:file",
+    component: Download
+  }
 ];
 
 export default routes;
