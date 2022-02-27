@@ -83,19 +83,19 @@ const ShareForm = () => {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       {selectedFile && progress ? (
-        <div className="w-full h-auto">
+        <div className="h-auto w-full">
           <div
-            className="w-full h-auto flex flex-row items-center cursor-pointer"
+            className="flex h-auto w-full cursor-pointer flex-row items-center"
             onClick={handlerDeleteFile}
           >
             <MdOutlineArrowBackIos className="text-xl text-gray-800" />
             <p className="mx-2 text-lg text-gray-800">Back</p>
           </div>
-          <div className="h-40 mt-12">
+          <div className="mt-12 h-40">
             <CircularProgressbar
-              className="w-full h-full"
+              className="h-full w-full"
               value={parseInt(progress)}
               maxValue={1}
               text={`${progress}%`}
@@ -105,47 +105,47 @@ const ShareForm = () => {
             <div className="select-text text-sm">
               <span className="font-semibold">Sharable file link:</span>
               <MdOutlineCopyAll
-                className="text-gray-800 text-xl inline-block cursor-pointer"
+                className="inline-block cursor-pointer text-xl text-gray-800"
                 onClick={copyClipboard}
               />
               <p
                 ref={copyTextRef}
               >{`https://${window.location.host}/${fileId}`}</p>
             </div>
-            <div className="select-text text-sm mt-4">
+            <div className="mt-4 select-text text-sm">
               <span className="font-semibold">Link expired at:</span>
               <p>{fileExpired ? new Date(fileExpired).toISOString() : ""}</p>
             </div>
           </div>
         </div>
       ) : (
-        <div className="w-full h-auto flex flex-col items-center">
-          <div className="mt-4 mobile:mt-2 tablet:mt-2 laptop:mt-2 mb-2 w-full h-auto">
-            <p className="text-center text-4xl mobile:text-xl tablet:text-2xl laptop:text-3xl font-semibold">
+        <div className="flex h-auto w-full flex-col items-center">
+          <div className="mt-4 mb-2 h-auto w-full mobile:mt-2 tablet:mt-2 laptop:mt-2">
+            <p className="text-center text-4xl font-semibold mobile:text-xl tablet:text-2xl laptop:text-3xl">
               Upload & Create a sharable link.
             </p>
           </div>
-          <div className="mt-6 mobile:mt-2 tablet:mt-4 laptop:mt-4 w-full h-auto">
+          <div className="mt-6 h-auto w-full mobile:mt-2 tablet:mt-4 laptop:mt-4">
             <input
               value={title}
               onChange={(event) => setTitle(event.target.value)}
               type="text"
-              className="w-full h-auto border-2 border-gray-200 rounded px-4 py-2 outline-none"
+              className="h-auto w-full rounded border-2 border-gray-200 px-4 py-2 outline-none"
               placeholder="Title"
               maxLength={30}
             />
           </div>
-          <div className="mt-4 w-full h-auto">
+          <div className="mt-4 h-auto w-full">
             <input
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               type="text"
-              className="w-full h-auto border-2 border-gray-200 rounded px-4 py-2 outline-none"
+              className="h-auto w-full rounded border-2 border-gray-200 px-4 py-2 outline-none"
               placeholder="Message"
               maxLength={100}
             />
           </div>
-          <div className="mt-4 w-full h-auto flex flex-row items-center cursor-pointer">
+          <div className="mt-4 flex h-auto w-full cursor-pointer flex-row items-center">
             <input
               id="passwordCheckbox"
               type="checkbox"
@@ -156,7 +156,7 @@ const ShareForm = () => {
               Secure with password
             </label>
           </div>
-          <div className="mt-4 w-full h-auto">
+          <div className="mt-4 h-auto w-full">
             <input
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -165,20 +165,20 @@ const ShareForm = () => {
                 background: !checkPassword ? "#cccccc50" : "transparent",
               }}
               disabled={!checkPassword}
-              className="w-full h-auto border-2 border-gray-200 rounded px-4 py-2 outline-none"
+              className="h-auto w-full rounded border-2 border-gray-200 px-4 py-2 outline-none"
               placeholder="Password"
             />
-            <span className="text-sm text-gray-600 mt-2 inline-block">
+            <span className="mt-2 inline-block text-sm text-gray-600">
               Only person with password can able to download resource.
             </span>
           </div>
-          <div className="mt-6 tablet:mt-2 laptop:mt-2 mb-4 tablet:mb-0 laptop:mb-0 w-full">
+          <div className="mt-6 mb-4 w-full tablet:mt-2 tablet:mb-0 laptop:mt-2 laptop:mb-0">
             <label
               htmlFor="uploadfile"
-              className="cursor-pointer flex flex-row items-center justify-center border-2 border-gray-800 rounded px-4 py-2"
+              className="flex cursor-pointer flex-row items-center justify-center rounded border-2 border-gray-800 px-4 py-2"
             >
               <RiAddCircleFill className="text-3xl text-gray-800" />
-              <span className="ml-2 text-2xl text-gray-800 font-semibold">
+              <span className="ml-2 text-2xl font-semibold text-gray-800">
                 Upload File
               </span>
             </label>

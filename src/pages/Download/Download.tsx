@@ -127,22 +127,22 @@ const Download = () => {
   }
 
   return (
-    <div className="w-full h-full flex flex-col bg-gray-800 text-white">
+    <div className="flex h-full w-full flex-col bg-gray-800 text-white">
       <div className="px-6 py-4">
         <Header />
       </div>
-      <div className="w-full h-[calc(100%-5rem)] overflow-hidden px-6 py-6 flex flex-row items-center justify-center">
-        <div className="w-3/5 h-3/4 bg-white text-gray-800 shadow-lg rounded-lg px-4 flex flex-col">
-          <div className="flex flex-row w-full h-full">
-            <div className="w-2/5 h-full py-4 pr-2 border-r">
+      <div className="flex h-[calc(100%-5rem)] w-full flex-row items-center justify-center overflow-hidden px-6 py-6">
+        <div className="flex h-3/4 w-3/5 flex-col rounded-lg bg-white px-4 text-gray-800 shadow-lg">
+          <div className="flex h-full w-full flex-row">
+            <div className="h-full w-2/5 border-r py-4 pr-2">
               <div
-                className="w-full h-auto flex flex-row items-center cursor-pointer"
+                className="flex h-auto w-full cursor-pointer flex-row items-center"
                 onClick={() => navigate("/")}
               >
                 <MdOutlineArrowBackIos className="text-xl text-gray-800" />
                 <p className="mx-2 text-lg text-gray-800">Home</p>
               </div>
-              <div className="w-full h-auto">
+              <div className="h-auto w-full">
                 <div className="mt-4 text-sm">
                   <span className="text-gray-400">Name</span>
                   <p className="break-words">{fileInfo?.name}</p>
@@ -161,19 +161,19 @@ const Download = () => {
                 </div>
                 <div className="mt-4 text-sm">
                   <span className="text-gray-400">Message</span>
-                  <p className="break-words h-1/3 overflow-x-hidden overflow-y-auto">
+                  <p className="h-1/3 overflow-y-auto overflow-x-hidden break-words">
                     {fileInfo?.message}
                   </p>
                 </div>
               </div>
             </div>
-            <div className="w-3/5 h-auto py-4">
+            <div className="h-auto w-3/5 py-4">
               {progress ? (
-                <div className="w-full h-full flex flex-col items-center justify-center">
-                  <p className="text-xl py-4">Downloading</p>
-                  <div className="w-1/2 h-auto">
+                <div className="flex h-full w-full flex-col items-center justify-center">
+                  <p className="py-4 text-xl">Downloading</p>
+                  <div className="h-auto w-1/2">
                     <CircularProgressbar
-                      className="w-full h-full"
+                      className="h-full w-full"
                       value={progress}
                       maxValue={1}
                       text={`${progress}%`}
@@ -181,7 +181,7 @@ const Download = () => {
                   </div>
                   {progress === 100 ? (
                     <div
-                      className="bg-gray-400 text-white rounded-full px-4 py-2 my-2 cursor-pointer"
+                      className="my-2 cursor-pointer rounded-full bg-gray-400 px-4 py-2 text-white"
                       onClick={() => setProgress(0)}
                     >
                       <p>Close</p>
@@ -189,7 +189,7 @@ const Download = () => {
                   ) : null}
                 </div>
               ) : fileInfo && fileInfo.name ? (
-                <div className="w-full h-full flex flex-col items-center justify-center">
+                <div className="flex h-full w-full flex-col items-center justify-center">
                   <AiOutlineDownload className="text-9xl text-gray-800" />
                   {fileInfo?.isPasswordProtected ? (
                     <div className="my-2 w-4/5">
@@ -198,19 +198,19 @@ const Download = () => {
                         onChange={(event) => setPassword(event.target.value)}
                         type="password"
                         placeholder="Enter password"
-                        className="w-full outline-none border px-4 py-1 rounded-lg"
+                        className="w-full rounded-lg border px-4 py-1 outline-none"
                       />
                     </div>
                   ) : null}
                   <div
-                    className="bg-gray-400 cursor-pointer rounded-full px-4 py-2 text-white w-4/5 flex flex-row items-center justify-center"
+                    className="flex w-4/5 cursor-pointer flex-row items-center justify-center rounded-full bg-gray-400 px-4 py-2 text-white"
                     onClick={handlerFileDownload}
                   >
                     <p className="px-2">Download</p>
                     {fileInfo?.isPasswordProtected ? <RiLockLine /> : null}
                   </div>
-                  <p className="text-xs mt-2">
-                    <span className="text-gray-400 px-1">Expire @</span>
+                  <p className="mt-2 text-xs">
+                    <span className="px-1 text-gray-400">Expire @</span>
                     <span className="text-gray-400">
                       {fileInfo?.expired
                         ? new Date(fileInfo?.expired).toLocaleString()
@@ -219,7 +219,7 @@ const Download = () => {
                   </p>
                 </div>
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center">
+                <div className="flex h-full w-full flex-col items-center justify-center">
                   <p className="text-2xl text-gray-400">Invalid file/expired</p>
                 </div>
               )}
