@@ -6,8 +6,10 @@ import {
     Route,
     Navigate,
 } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import './style.css'
+import './main.scss'
 import routes from './routes/routes';
 
 const App: React.FC = () => {
@@ -19,6 +21,7 @@ const App: React.FC = () => {
                 })}
                 <Route path="*" element={<Navigate to="/" />} />
             </Switch>
+            <ToastContainer theme="dark" position="top-center" />
         </div>
     )
 }
