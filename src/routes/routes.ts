@@ -13,8 +13,8 @@ const routes: IRoute[] = [
   },
   {
     path: "/:file",
-    component: Download
-  }
+    component: Download,
+  },
 ];
 
 export default routes;
