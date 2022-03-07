@@ -128,11 +128,11 @@ const Download = () => {
 
   return (
     <div className="flex h-full w-full flex-col bg-gray-800 text-white">
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 mobile:px-2 mobile:py-2">
         <Header />
       </div>
-      <div className="flex h-[calc(100%-5rem)] w-full flex-row items-center justify-center overflow-hidden px-6 py-6">
-        <div className="flex h-3/4 w-3/5 flex-col rounded-lg bg-white px-4 text-gray-800 shadow-lg">
+      <div className="flex h-[calc(100%-5rem)] w-full flex-row items-center justify-center overflow-hidden px-6 py-6 mobile:px-2 mobile:py-2">
+        <div className="flex h-3/4 w-3/5 flex-col rounded-lg bg-white px-4 text-gray-800 shadow-lg mobile:h-auto mobile:w-full mobile:px-2">
           <div className="flex h-full w-full flex-row">
             <div className="h-full w-2/5 border-r py-4 pr-2">
               <div
@@ -198,7 +198,7 @@ const Download = () => {
                         onChange={(event) => setPassword(event.target.value)}
                         type="password"
                         placeholder="Enter password"
-                        className="w-full rounded-lg border px-4 py-1 outline-none"
+                        className="w-full rounded-lg border px-4 py-1 outline-none mobile:text-sm"
                       />
                     </div>
                   ) : null}
