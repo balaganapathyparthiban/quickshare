@@ -9,8 +9,8 @@ const Landing: React.FC = () => {
       <div className="px-6 py-4 mobile:px-2 mobile:py-2 tablet:px-4 laptop:px-6">
         <Header />
       </div>
-      <div className="flex h-[calc(100%-5rem)] w-full flex-row overflow-hidden px-6 py-6 mobile:flex-col-reverse mobile:px-2 mobile:py-2 tablet:px-4 tablet:py-4 laptop:px-6 laptop:py-4">
-        <div className="h-full w-2/5 rounded-lg bg-white p-6 text-gray-800 shadow-lg mobile:w-full mobile:p-4 tablet:w-2/5 tablet:p-4 laptop:w-2/5 laptop:p-4">
+      <div className="flex h-[calc(100%-5rem)] w-full flex-row items-center justify-center overflow-hidden px-6 py-6 mobile:flex-col-reverse mobile:px-2 mobile:py-2 tablet:px-4 tablet:py-4 laptop:px-6 laptop:py-4">
+        <div className="h-full w-2/5 rounded-lg bg-white p-6 text-gray-800 shadow-lg mobile:h-auto mobile:w-full mobile:p-4 tablet:w-2/5 tablet:p-4 laptop:w-2/5 laptop:p-4">
           <ShareForm />
         </div>
         <div className="h-full w-3/5 px-12 mobile:hidden mobile:w-full mobile:px-2 tablet:w-3/5 tablet:px-4 laptop:w-4/5 laptop:px-8">
